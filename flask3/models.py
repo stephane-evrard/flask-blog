@@ -25,3 +25,8 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+class Quote:
+    def __init__ (self,author,quote):
+        self.author = author
+        self.quote = quote
