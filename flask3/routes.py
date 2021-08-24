@@ -15,7 +15,6 @@ quotes=[
         "permalink": "http://quotes.stormconsultancy.co.uk/quotes/5"
     }
  ]
-
 @app.route('/')
 @app.route('/home')
 def home():
@@ -23,6 +22,7 @@ def home():
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
    
     return render_template('home.html',posts= posts)
+
 @app.route('/about')
 def about():
     return render_template('about.html',title= "about")
@@ -73,6 +73,8 @@ def save_picture(form_picture):
     form_picture.save(picture_path)
 
     return picture_fn
+
+
 @app.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
@@ -92,6 +94,8 @@ def account():
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account',
                            image_file=image_file, form=form)
+
+
 
 @app.route("/post/new", methods=['GET', 'POST'])
 @login_required
