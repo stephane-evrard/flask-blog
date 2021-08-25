@@ -56,5 +56,7 @@ The following command installs all the application requirements
 | Password  | Account password, ``1234``|
 | Confirm Password  | Account password, ``1234``|
 
+##Live link on heroku
+  https://flaskblog-ip.herokuapp.com/
 ## License
 > MIT License &copy; 2021 Stephane Evrard
